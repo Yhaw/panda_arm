@@ -4,7 +4,7 @@
     <param name="robot_description" command="xacro '$(find panda_arm)/description/urdf/panda_nozzle.urdf.xacro'"/>
     <!-- <param name="dispenser" command="xacro '$(find panda_arm)/description/urdf/dispenser.urdf.xacro'"/> -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
-    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui"/>
+    <!-- <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui"/> -->
 
 
 
@@ -23,8 +23,8 @@
   </node> -->
 
     <node name="spawing_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model panda -param robot_description" />
-    <arg name="rviz_config_file" default="$(find panda_arm)/config/panda.rviz"/>
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config_file)"/>
+    <!-- <arg name="rviz_config_file" default="$(find panda_arm)/config/panda.rviz"/> -->
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config_file)"/> -->
     <rosparam file="$(find panda_arm)/config/joint_state.yaml" command="load"/> 
     <rosparam file="$(find panda_arm)/config/pid.yaml" command="load"/> 
     <!-- <rosparam file="$(find panda_arm)/config/gripper.yaml" command="load"/>  -->
